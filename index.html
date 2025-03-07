@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echoes of Apotheosis</title>
+    <style>
+        body {
+            font-family: "Cinzel", serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0a0a14;
+            color: #e0e0ff;
+            background-image: url('https://img.freepik.com/free-photo/cosmic-background-with-colorful-laser-lights_24837-259.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 0 0 15px rgba(100, 100, 255, 0.7);
+            letter-spacing: 3px;
+        }
+        
+        .tagline {
+            font-style: italic;
+            margin-top: 10px;
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .card {
+            background-color: rgba(20, 20, 40, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(100, 100, 255, 0.2);
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 100, 0.3);
+        }
+        
+        .card-img {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .card-content {
+            padding: 20px;
+        }
+        
+        .card h2 {
+            margin-top: 0;
+            color: #a0a0ff;
+            font-size: 1.5em;
+        }
+        
+        .card p {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+        
+        .card a {
+            color: #80c0ff;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            transition: color 0.2s;
+        }
+        
+        .card a:hover {
+            color: #ffffff;
+        }
+        
+        .gods-img {
+            background-image: url('https://img.freepik.com/premium-photo/fantasy-magical-portal-cosmic-space_564714-393.jpg');
+        }
+        
+        .locations-img {
+            background-image: url('https://img.freepik.com/free-photo/fairytale-castle-mountain-top-sunset-ai-generated-image_24640-80401.jpg');
+        }
+        
+        .npcs-img {
+            background-image: url('https://img.freepik.com/free-photo/fantasy-traveler-stands-with-his-back-viewer-mysterious-town-night-digital-art-style-illustration-painting_456031-127.jpg');
+        }
+        
+        .items-img {
+            background-image: url('https://img.freepik.com/free-photo/old-scroll-books-with-candle-light_53876-30561.jpg');
+        }
+        
+        .party-img {
+            background-image: url('https://img.freepik.com/free-photo/fantasy-landscape-with-old-castle_23-2150838001.jpg');
+        }
+        
+        .journal-img {
+            background-image: url('https://img.freepik.com/free-photo/ancient-books-parchment-scrolls-feather-ink-pen-vintage-desk_107791-15498.jpg');
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 20px;
+            font-size: 0.8em;
+            opacity: 0.6;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ECHOES OF APOTHEOSIS</h1>
+            <div class="tagline">none of this is actually built congrats</div>
+        </header>
+        
+        <div class="grid">
+            <div class="card">
+                <div class="card-img gods-img"></div>
+                <div class="card-content">
+                    <h2>The Divine</h2>
+                    <p>The pantheon that shapes our world</p>
+                    <a href="gods/index.html">Explore the Gods →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img locations-img"></div>
+                <div class="card-content">
+                    <h2>Realms</h2>
+                    <p>The lands scarred by divine conflict</p>
+                    <a href="locations/index.html">Visit Locations →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img npcs-img"></div>
+                <div class="card-content">
+                    <h2>Characters</h2>
+                    <p>Friends, foes, and those in between</p>
+                    <a href="npcs/index.html">Meet NPCs →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img items-img"></div>
+                <div class="card-content">
+                    <h2>Artifacts</h2>
+                    <p>Weapons, relics, and magical treasures</p>
+                    <a href="items/index.html">View Collection →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img party-img"></div>
+                <div class="card-content">
+                    <h2>The Party</h2>
+                    <p>Our heroes standing against the darkness</p>
+                    <a href="party/index.html">Meet the Heroes →</a>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-img journal-img"></div>
+                <div class="card-content">
+                    <h2>Campaign Log</h2>
+                    <p>The journey so far</p>
+                    <a href="journal/index.html">Read the Chronicles →</a>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            Echoes of Apotheosis Campaign • Where divine and mortal realms collide
+        </footer>
+    </div>
+</body>
+</html>
