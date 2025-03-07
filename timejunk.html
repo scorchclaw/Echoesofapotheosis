@@ -3,10 +3,10 @@
 <head>
     <link rel="stylesheet" href="/Echoesofapotheosis/css/style.css">
     <style>
-        /* Shadier merchant styling */
+        /* Tackier but less cluttered merchant styling */
         body {
-            background-color: #2e2e2e; /* A medium-dark grey color */
-            background-image: none; /* Removes the background image */
+            background-color: #2e2e2e;
+            background-image: none;
         }
         
         .shady-container {
@@ -14,13 +14,13 @@
             margin: 40px auto;
             background-color: rgba(20, 20, 35, 0.9);
             border-radius: 10px;
-            box-shadow: 0 0 25px rgba(255, 160, 50, 0.15);
+            box-shadow: 0 0 25px rgba(255, 140, 0, 0.3);
             padding: 20px;
-            border: 1px solid #443a5a;
+            border: 1px solid #553366;
             position: relative;
         }
         
-        /* Mysterious stains and patterns */
+        /* Better stain patterns */
         .shady-container::before {
             content: "";
             position: absolute;
@@ -28,43 +28,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: repeating-linear-gradient(
-                45deg,
-                rgba(0, 0, 0, 0.05),
-                rgba(0, 0, 0, 0.05) 10px,
-                rgba(0, 0, 0, 0) 10px,
-                rgba(0, 0, 0, 0) 20px
-            );
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(70, 40, 90, 0.1)" d="M30,20 Q50,5 70,20 T90,40 T70,60 T30,80 T10,60 T30,20"></path></svg>');
+            background-size: 300px 300px;
+            opacity: 0.2;
             pointer-events: none;
             border-radius: 10px;
             z-index: 0;
-        }
-        
-        /* Add mysterious stains */
-        .shady-container::after {
-            content: "";
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            background-image: 
-                radial-gradient(ellipse at 80% 40%, rgba(110, 30, 30, 0.15) 8%, transparent 30%),
-                radial-gradient(ellipse at 20% 70%, rgba(40, 10, 60, 0.1) 15%, transparent 35%),
-                radial-gradient(ellipse at 60% 85%, rgba(90, 80, 10, 0.08) 10%, transparent 40%);
-            pointer-events: none;
-            z-index: 0;
-            border-radius: 10px;
         }
         
         .header-wrapper {
             position: relative;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            z-index: 1;
         }
         
+        /* Tackier neon sign */
         .neon-sign {
             width: 100%;
-            height: 120px;
+            height: 100px;
             background: linear-gradient(to right, #1a1a3a, #3a3a6a, #1a1a3a);
             border-radius: 8px;
             margin-bottom: 20px;
@@ -73,8 +54,8 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            border: 1px solid #5a4a6a;
-            box-shadow: 0 0 15px rgba(255, 180, 50, 0.2) inset;
+            border: 2px solid #ff6600;
+            box-shadow: 0 0 15px rgba(255, 102, 0, 0.4) inset;
         }
         
         .neon-flicker {
@@ -94,83 +75,107 @@
             font-family: 'Courier New', monospace;
             color: #ffb060;
             text-shadow: 0 0 10px #ff8000, 0 0 20px #ff8000;
-            font-size: 2.5em;
+            font-size: 2.2em;
             position: relative;
             z-index: 2;
             letter-spacing: 2px;
+            text-align: center;
         }
         
+        /* Tackier store hours */
         .store-hours {
             position: absolute;
-            top: 10px;
-            right: 15px;
-            background-color: rgba(40, 30, 50, 0.8);
+            top: 5px;
+            right: 10px;
+            background-color: #ff6600;
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 0.8em;
-            color: #aaa;
+            color: #000;
             transform: rotate(3deg);
-            border: 1px dashed #665;
+            border: 2px dashed #ffcc00;
+            font-weight: bold;
+            z-index: 5;
         }
         
         .subtitle {
             text-align: center;
-            color: #aaa;
+            color: #ffcc66;
             font-style: italic;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-family: 'Courier New', monospace;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px #000;
         }
         
+        /* Tackier warning tape */
         .warning-tape {
             background: repeating-linear-gradient(
                 45deg,
-                #332244,
-                #332244 10px,
-                #221133 10px,
-                #221133 20px
+                #ffcc00,
+                #ffcc00 10px,
+                #000000 10px,
+                #000000 20px
             );
-            color: #ffcc80;
+            color: #000;
             text-align: center;
-            padding: 5px;
-            margin: 20px 0;
+            padding: 8px;
+            margin: 15px 0;
             font-weight: bold;
-            transform: rotate(-1deg);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transform: rotate(-0.5deg);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 3px #fff;
+            font-size: 1.1em;
         }
-
-        /* Extra warning tape */
-        .special-warning {
-            background: repeating-linear-gradient(
-                -45deg,
-                #441111,
-                #441111 10px,
-                #331111 10px,
-                #331111 20px
-            );
-            color: #ffeeaa;
-            text-align: center;
-            padding: 3px;
-            margin: 30px 0 15px 0;
+        
+        .sale-tag {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #ff0000;
+            color: #ffff00;
+            font-size: 1.2em;
             font-weight: bold;
-            transform: rotate(0.5deg);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            font-size: 0.9em;
-            letter-spacing: 1px;
+            padding: 10px 20px;
+            transform: rotate(15deg);
+            border: 3px dashed #ffff00;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            z-index: 10;
+            text-shadow: 2px 2px 0 #000;
+        }
+        
+        /* Main inventory table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            position: relative;
+            z-index: 1;
         }
         
         th {
-            background-color: #2f264a;
-            color: #ffb060;
-            border-bottom: 2px solid #4a3a6a;
+            background: linear-gradient(to bottom, #4a366a, #2f264a);
+            color: #ffcc66;
+            border-bottom: 2px solid #ff6600;
+            padding: 8px;
+            text-align: left;
         }
         
         td {
             border-bottom: 1px solid #3a3a5a;
+            padding: 8px;
             position: relative;
         }
         
+        tr:nth-child(even) {
+            background-color: rgba(60, 50, 80, 0.3);
+        }
+        
         tr:hover {
-            background-color: #2a263a;
+            background-color: rgba(255, 102, 0, 0.1);
         }
         
         .item-name {
@@ -179,21 +184,29 @@
             position: relative;
         }
         
-        /* Item whispers on hover */
+        /* Whispers on hover - better positioning */
         .item-name[data-whisper]:hover::after {
             content: attr(data-whisper);
             position: absolute;
-            top: -15px;
+            bottom: 20px;
             left: 0;
             font-style: italic;
             font-size: 0.75em;
-            color: rgba(255, 100, 100, 0.7);
+            color: #ff6666;
             white-space: nowrap;
+            background-color: rgba(20, 15, 25, 0.9);
+            padding: 3px 8px;
+            border-radius: 3px;
+            z-index: 10;
+            border: 1px solid #ff3333;
         }
         
         .preowned {
             color: #ff7060;
             font-style: italic;
+            background-color: rgba(255, 0, 0, 0.1);
+            padding: 2px 5px;
+            border-radius: 3px;
         }
         
         .price {
@@ -205,18 +218,21 @@
             color: #ffdd00;
             font-weight: bold;
             letter-spacing: 1px;
+            text-shadow: 0 0 3px #ff6600;
         }
         
         .disclaimer {
             text-align: center;
             font-style: italic;
-            margin-top: 30px;
-            color: #aaa;
+            margin-top: 25px;
+            color: #ffcc66;
             font-size: 0.9em;
             padding: 15px;
-            background-color: #27223a;
-            border: 1px solid #3a3a5a;
+            background-color: rgba(40, 30, 50, 0.7);
+            border: 2px solid #ff6600;
             border-radius: 5px;
+            position: relative;
+            z-index: 1;
         }
         
         .curse {
@@ -234,257 +250,116 @@
             color: #ffb060;
             display: block;
             margin-top: 10px;
+            text-shadow: 1px 1px 3px #000;
         }
         
         .back-room {
             text-align: right;
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 0.8em;
+            position: relative;
+            z-index: 1;
         }
         
         .back-room a {
-            color: #777;
+            color: #ff6600;
             text-decoration: none;
         }
         
         .back-room a:hover {
-            color: #aaa;
+            color: #ffcc00;
             text-decoration: underline;
         }
         
         .notes {
             font-size: 0.9em;
-            color: #b0b0c0;
+            color: #ffcc66;
             padding: 10px;
-            border-top: 1px dashed #444;
+            border-top: 1px dashed #ff6600;
             margin-top: 20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .fingerprint {
-            width: 30px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
-            position: absolute;
-            bottom: 20px;
-            right: 30px;
-            transform: rotate(15deg);
-        }
-
-        /* New elements */
+        /* Single cryptic note - better positioned */
         .cryptic-note {
             position: absolute;
-            background-color: rgba(255, 245, 220, 0.08);
+            background-color: rgba(255, 245, 220, 0.1);
             padding: 5px 10px;
             font-size: 0.7em;
-            color: rgba(255, 180, 100, 0.6);
+            color: rgba(255, 180, 100, 0.7);
             box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
             font-family: 'Courier New', monospace;
             z-index: 3;
-        }
-
-        .note-1 {
-            top: 180px;
+            bottom: 50px;
             right: 40px;
             transform: rotate(5deg);
+            border: 1px solid rgba(255, 102, 0, 0.3);
         }
 
-        .note-2 {
-            bottom: 120px;
-            left: 30px;
-            transform: rotate(-3deg);
-        }
-
-        .extra-disclaimer {
-            background-color: rgba(40, 30, 30, 0.4);
-            padding: 10px;
-            margin: 15px 0;
-            font-size: 0.8em;
-            color: #bb9999;
-            border-left: 3px solid #662222;
-        }
-
-        .faded {
-            color: rgba(187, 153, 153, 0.6);
-            font-style: italic;
-        }
-
+        /* Single focused review section */
         .reviews {
-            margin-top: 25px;
+            margin-top: 20px;
             padding: 15px;
-            background-color: rgba(30, 30, 40, 0.5);
+            background-color: rgba(40, 20, 0, 0.3);
             border-radius: 5px;
+            position: relative;
+            z-index: 1;
+            border-left: 3px solid #ff6600;
         }
 
         .reviews h3 {
-            color: #aaaacc;
+            color: #ffcc66;
             font-size: 1em;
             margin-top: 0;
-            border-bottom: 1px solid #444466;
+            border-bottom: 1px solid #ff6600;
             padding-bottom: 5px;
         }
 
         .review {
-            margin: 10px 0;
+            margin: 8px 0;
             font-size: 0.85em;
-            color: #ccccdd;
+            color: #ffddbb;
             font-style: italic;
         }
 
         .reviewer {
-            color: #888899;
+            color: #aaaaaa;
         }
-
-        .terms {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: rgba(30, 30, 35, 0.6);
-            font-size: 0.8em;
-        }
-
-        .redacted {
-            color: #665577;
-            background-color: #443355;
-            padding: 3px;
-            font-family: monospace;
-            letter-spacing: 1px;
-        }
-
-        .counter {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background-color: rgba(40, 30, 50, 0.8);
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8em;
-            color: #aaa;
-            border: 1px solid #554466;
-        }
-
-        .counter-value {
-            color: #ff8866;
-            font-weight: bold;
-        }
-
-        .counter-direction {
-            color: #ff6655;
-        }
-
-        .security-measure {
-            position: absolute;
-            right: 15px;
-            bottom: 60px;
-            font-size: 0.7em;
-            color: #777788;
-            background-color: rgba(30, 30, 40, 0.7);
-            padding: 5px;
-            border-radius: 3px;
-            border: 1px solid #443355;
-        }
-
-        .security-icon {
-            color: #aa8866;
-            margin-right: 5px;
-        }
-
-        .security-status {
-            margin-top: 3px;
-            font-size: 0.9em;
-        }
-
-        .blink {
-            color: #ff6677;
-        }
-
-        .arcane-symbol {
-            display: inline-block;
-            color: rgba(170, 140, 180, 0.5);
-            font-family: 'Arial Unicode MS', sans-serif;
-            font-size: 0.8em;
-            vertical-align: middle;
-            cursor: help;
-        }
-
+        
+        /* Timestamp with time distortion flair */
         .timestamp {
-            text-align: center;
+            text-align: right;
             font-size: 0.7em;
-            color: #777788;
+            color: #ff8866;
             margin-top: 15px;
             padding: 5px;
-            background-color: rgba(40, 35, 50, 0.4);
-            border-radius: 3px;
+            font-style: italic;
         }
-
-        .hidden-message {
-            color: rgba(30, 30, 40, 0.95);
-            user-select: text;
-            position: absolute;
-            bottom: 5px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.7em;
-            width: 80%;
-            text-align: center;
-        }
-
-        .hidden-message::selection {
-            background-color: rgba(255, 50, 50, 0.7);
-            color: white;
-        }
-
-        .bloodstain {
-            position: absolute;
-            background-color: rgba(120, 30, 30, 0.1);
-            border-radius: 50%;
-            z-index: 1;
-        }
-
-        .bloodstain-1 {
-            width: 70px;
-            height: 40px;
-            bottom: 50px;
-            right: 80px;
-            transform: rotate(15deg) scale(1, 0.7);
-        }
-
-        .bloodstain-2 {
-            width: 30px;
-            height: 20px;
-            top: 350px;
-            left: 40px;
-            transform: rotate(45deg) scale(1, 0.7);
-        }
-
-        .fine-print {
-            font-size: 0.6em;
-            color: #666677;
-            margin-top: 5px;
-            line-height: 1.2;
+        
+        /* Better formatted inventory list */
+        .item-type, .price, td:nth-child(4), td:nth-child(5) {
+            padding-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="shady-container">
-        <div class="counter">
-            <span class="counter-text">Timeline Integrity: </span>
-            <span class="counter-value">87%</span>
-            <span class="counter-direction">▼</span>
-        </div>
-
+        <div class="sale-tag">FIRE SALE!</div>
+        
         <div class="header-wrapper">
             <div class="store-hours">
                 HOURS: ???<br>
-                WHEN AVAILABLE
+                OPEN WHEN TIMELINE ALLOWS
             </div>
             <div class="neon-sign">
                 <h1 class="neon-text neon-flicker">CHRONOTYRINN'S BOTTOM BARREL TIME JUNK</h1>
             </div>
         </div>
         
-        <div class="subtitle">"Quality merchandise from questionable times... no refunds!"</div>
+        <div class="subtitle">"Quality merchandise from questionable times... absolutely NO refunds!"</div>
         
-        <div class="warning-tape">CAUTION: ALL SALES FINAL - NO TIMELINE GUARANTEES</div>
+        <div class="warning-tape">⚠ CAUTION: ALL SALES FINAL - NO TIMELINE GUARANTEES ⚠</div>
         
         <table>
             <tr>
@@ -557,19 +432,9 @@
                 <td>+2 bonus to AC while wearing no armor and using no shield</td>
             </tr>
         </table>
-
-        <div class="special-warning">⚠ ITEMS MAY DISPLAY TEMPORAL DISPLACEMENT SYMPTOMS ⚠</div>
         
-        <div class="extra-disclaimer">
-            <p>The Chronotyrinn is not responsible for:
-                <span class="faded">temporal doppelgangers, chronological displacement, paradoxical item duplications, 
-                timeline erasure, existential memory loss, feeling of being watched by your past/future self, 
-                or spontaneous disintegration of purchased goods when crossing timeline boundaries...</span>
-            </p>
-        </div>
-
         <div class="reviews">
-            <h3>Customer Testimonials <span class="arcane-symbol" title="Do not attempt to decipher">ᛦᛟᚢ ᚨᚱᛖ ᚷᛖᛏᛏᛁᚾᚷ ᚲᛚᛟᛊᛖᚱ</span></h3>
+            <h3>Customer Testimonials</h3>
             <div class="review">
                 "Great deals! Haven't been able to find my way home since, but worth it!" - <span class="reviewer">█████ from ████████</span>
             </div>
@@ -584,47 +449,25 @@
         <div class="disclaimer">
             "Payment is due the next time you visit. No temporal paradoxes, dimensional anomalies, or existential crises accepted as valid excuses for non-payment. I know when and where to find you... in EVERY timeline."
             <span class="dodgy-signature">— The Chronotyrinn</span>
-            <div class="fine-print">Temporal collection agents may be dispatched at chronotyrinn's discretion. Collection methods may include but are not limited to: dream visitation, memory extraction, item repossession across all timelines, and involuntary relocation to the Corridors of Time for indentured service.</div>
         </div>
         
         <div class="notes">
-            <p><strong>Note:</strong> The Chronotyrinn appears to be having some kind of discount sale today - perhaps the items are slipping through time faster than usual, or the eccentric merchant simply needs to unload inventory before a pending timeline collapse...</p>
+            <strong>Note:</strong> The Chronotyrinn appears to be having some kind of discount sale today - perhaps the items are slipping through time faster than usual, or the eccentric merchant simply needs to unload inventory before a pending timeline collapse...
         </div>
         
         <div class="back-room">
             <a href="#" style="text-decoration: line-through;">Ask about "special inventory"...</a> <span style="color: #ff4444; font-size: 0.8em;">TEMPORARILY UNAVAILABLE - TIME AUDIT IN PROGRESS</span>
         </div>
         
-        <div class="fingerprint"></div>
-
-        <div class="cryptic-note note-1">Last customer never returned from 𝕥𝕙𝕖 𝕓𝕒𝕔𝕜 𝕣𝕠𝕠𝕞</div>
-        <div class="cryptic-note note-2">Reminder: Do NOT sell to customers who blink vertically</div>
-
-        <div class="terms">
-            <p>By entering this establishment you agree to the following terms:</p>
-            <p class="redacted">█████████████████████████████████████████████</p>
-            <p class="redacted">██████████████ SOUL FORFEITURE ████████████████</p>
-            <p class="redacted">█████████████████████████████████████████████</p>
-            <p><small>(Terms subject to retroactive changes across all timelines)</small></p>
-        </div>
-
-        <div class="security-measure">
-            <span class="security-icon">👁️</span> Customer tracking active
-            <div class="security-status">Status: <span class="blink">WATCHING</span></div>
-        </div>
+        <div class="cryptic-note">Last customer never returned from 𝕥𝕙𝕖 𝕓𝕒𝕔𝕜 𝕣𝕠𝕠𝕞</div>
 
         <div class="timestamp">
             Last updated: <span id="shifting-time">??:??</span>
         </div>
-
-        <div class="bloodstain bloodstain-1"></div>
-        <div class="bloodstain bloodstain-2"></div>
-
-        <div class="hidden-message">HE KNOWS WHERE YOU LIVE IN EVERY TIMELINE</div>
     </div>
 
     <script>
-        // Set random time for static timestamp
+        // Set random time for timestamp
         document.getElementById('shifting-time').textContent = 
             `${Math.floor(Math.random() * 24)}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')} ${['CE', 'BCE', 'Æ', '∞', '?!'][Math.floor(Math.random() * 5)]}`;
     </script>
