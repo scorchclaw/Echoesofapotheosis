@@ -5,9 +5,12 @@
     <style>
         /* Shadier merchant styling */
         body {
-            background-image: url('https://img.freepik.com/free-photo/abandoned-factory-interior_1048-4453.jpg');
-            background-size: cover;
-            background-attachment: fixed;
+    background-image: url('https://static.wikia.nocookie.net/nier/images/1/1e/Abandoned_Factory.png/revision/latest?cb=20200612074212');
+    background-size: cover;
+    background-attachment: fixed;
+    backdrop-filter: blur(5px); /* This works in some browsers */
+    /* For broader compatibility, add a pseudo-element with the blur */
+    position: relative;
         }
         
         .shady-container {
@@ -229,7 +232,7 @@
                 WHEN AVAILABLE
             </div>
             <div class="neon-sign">
-                <h1 class="neon-text neon-flicker">CHRONOTYRINN'S</h1>
+                <h1 class="neon-text neon-flicker">CHRONOTYRINN'S BOTTOM BARREL TIME JUNK</h1>
             </div>
         </div>
         
