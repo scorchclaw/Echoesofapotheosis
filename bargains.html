@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="/Echoesofapotheosis/css/style.css">
     <style>
-        /* Global body styles with an animated radial background (subtle animation) */
+        /* Global body styles with an animated radial background */
         body {
             background: radial-gradient(circle at center, #3b003b, #000);
             animation: backgroundPulse 10s infinite alternate;
@@ -12,39 +12,11 @@
         }
         
         @keyframes backgroundPulse {
-            from { filter: brightness(0.95); }
-            to { filter: brightness(1.05); }
+            from { filter: brightness(0.9); }
+            to { filter: brightness(1.1); }
         }
         
-        /* New tacky navigation bar */
-        .tacky-navbar {
-            background: linear-gradient(90deg, #ff66cc, #ffcc00);
-            padding: 10px;
-            text-align: center;
-            border-bottom: 2px dashed #ff6600;
-        }
-        .tacky-navbar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: inline-block;
-        }
-        .tacky-navbar li {
-            display: inline;
-            margin: 0 15px;
-        }
-        .tacky-navbar a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Courier New', monospace;
-            font-size: 1.1em;
-            text-shadow: 0 0 3px #000;
-        }
-        .tacky-navbar a:hover {
-            color: #ffdd00;
-        }
-        
-        /* Extra tacky container styling with a bold dashed, gradient border */
+        /* Extra tacky container styling with a bold dashed border and gradient border image */
         .shady-container {
             max-width: 900px;
             margin: 40px auto;
@@ -72,7 +44,7 @@
             z-index: 0;
         }
         
-        /* Updated neon sign - static neon glow (no flashing or glitching) */
+        /* Neon sign with enhanced glitch and flicker effects */
         .neon-sign {
             width: 100%;
             height: 100px;
@@ -99,7 +71,52 @@
             text-align: center;
         }
         
-        /* Tackier store hours */
+        /* Glitch pseudo-elements for extra tackiness */
+        .neon-text::before,
+        .neon-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.6;
+            clip: rect(0, 900px, 0, 0);
+        }
+        
+        .neon-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #ff3300;
+            animation: glitch 2s infinite linear alternate-reverse;
+        }
+        
+        .neon-text::after {
+            left: -2px;
+            text-shadow: 2px 0 #33ffcc;
+            animation: glitch 3s infinite linear alternate-reverse;
+        }
+        
+        @keyframes glitch {
+            0% { clip: rect(10px, 9999px, 40px, 0); }
+            20% { clip: rect(85px, 9999px, 140px, 0); }
+            40% { clip: rect(10px, 9999px, 40px, 0); }
+            60% { clip: rect(85px, 9999px, 140px, 0); }
+            80% { clip: rect(10px, 9999px, 40px, 0); }
+            100% { clip: rect(85px, 9999px, 140px, 0); }
+        }
+        
+        /* Retaining your original flicker animation */
+        .neon-flicker {
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+                opacity: 1;
+            }
+            20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+                opacity: 0.4;
+            }
+        }
+        
         .store-hours {
             position: absolute;
             top: 5px;
@@ -127,7 +144,7 @@
             text-shadow: 1px 1px 3px #000;
         }
         
-        /* Tackier warning tape with a subtle shake (non-flashing) */
+        /* Warning tape with a slight shake animation */
         .warning-tape {
             background: repeating-linear-gradient(
                 45deg,
@@ -147,6 +164,15 @@
             z-index: 1;
             text-shadow: 0 0 3px #fff;
             font-size: 1.1em;
+            animation: shake 5s infinite;
+        }
+        
+        @keyframes shake {
+            0% { transform: translate(0px, 0px) rotate(-0.5deg); }
+            25% { transform: translate(2px, -2px) rotate(-0.5deg); }
+            50% { transform: translate(-2px, 2px) rotate(-0.5deg); }
+            75% { transform: translate(2px, 2px) rotate(-0.5deg); }
+            100% { transform: translate(0px, 0px) rotate(-0.5deg); }
         }
         
         .sale-tag {
@@ -163,13 +189,12 @@
             box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
             z-index: 10;
             text-shadow: 2px 2px 0 #000;
-            /* Pulse animation kept very subtle */
             animation: pulse 2s infinite;
         }
         
         @keyframes pulse {
             0% { transform: scale(1) rotate(15deg); }
-            50% { transform: scale(1.05) rotate(15deg); }
+            50% { transform: scale(1.1) rotate(15deg); }
             100% { transform: scale(1) rotate(15deg); }
         }
         
@@ -320,6 +345,12 @@
             right: 40px;
             transform: rotate(5deg);
             border: 1px solid rgba(255, 102, 0, 0.3);
+            animation: pulseNote 4s infinite alternate;
+        }
+        
+        @keyframes pulseNote {
+            0% { opacity: 1; }
+            100% { opacity: 0.6; }
         }
         
         .reviews {
@@ -330,6 +361,13 @@
             position: relative;
             z-index: 1;
             border-left: 3px solid #ff6600;
+            animation: reviewsFlicker 5s infinite alternate;
+        }
+        
+        @keyframes reviewsFlicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
         }
         
         .reviews h3 {
@@ -363,47 +401,9 @@
         .item-type, .price, td:nth-child(4), td:nth-child(5) {
             padding-left: 10px;
         }
-        
-        /* New Timeline Quote element */
-        .timeline-quote {
-            background-color: rgba(255, 204, 0, 0.2);
-            border: 1px dotted #ff6600;
-            padding: 10px;
-            margin: 20px 0;
-            text-align: center;
-            font-family: 'Courier New', monospace;
-            color: #ffcc66;
-            font-size: 1.1em;
-        }
-        
-        /* New tacky footer */
-        .tacky-footer {
-            background: linear-gradient(90deg, #ffcc00, #ff66cc);
-            padding: 10px;
-            text-align: center;
-            border-top: 2px dashed #ff6600;
-            color: #000;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            text-shadow: 0 0 2px #fff;
-            margin-top: 40px;
-        }
-        .tacky-footer p {
-            margin: 5px;
-        }
     </style>
 </head>
 <body>
-    <!-- New navigation bar -->
-    <nav class="tacky-navbar">
-        <ul>
-            <li><a href="#inventory">Inventory</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About Chronotyrinn</a></li>
-        </ul>
-    </nav>
-    
     <div class="shady-container">
         <div class="sale-tag">FIRE SALE!</div>
         
@@ -413,7 +413,7 @@
                 OPEN WHEN TIMELINE ALLOWS
             </div>
             <div class="neon-sign">
-                <h1 class="neon-text">CHRONOTYRINN'S BOTTOM BARREL TIME JUNK</h1>
+                <h1 class="neon-text neon-flicker" data-text="CHRONOTYRINN'S BOTTOM BARREL TIME JUNK">CHRONOTYRINN'S BOTTOM BARREL TIME JUNK</h1>
             </div>
         </div>
         
@@ -421,12 +421,7 @@
         
         <div class="warning-tape">⚠ CAUTION: ALL SALES FINAL - NO TIMELINE GUARANTEES ⚠</div>
         
-        <!-- New Timeline Quote element -->
-        <div class="timeline-quote">
-            "Time is money, but in our shop, it's all free... until it isn't!"
-        </div>
-        
-        <table id="inventory">
+        <table>
             <tr>
                 <th>Item</th>
                 <th>Type</th>
@@ -498,7 +493,7 @@
             </tr>
         </table>
         
-        <div class="reviews" id="testimonials">
+        <div class="reviews">
             <h3>Customer Testimonials</h3>
             <div class="review">
                 "Great deals! Haven't been able to find my way home since, but worth it!" - <span class="reviewer">█████ from ████████</span>
@@ -520,7 +515,7 @@
             <strong>Note:</strong> The Chronotyrinn appears to be having some kind of discount sale today - perhaps the items are slipping through time faster than usual, or the eccentric merchant simply needs to unload inventory before a pending timeline collapse...
         </div>
         
-        <div class="back-room" id="contact">
+        <div class="back-room">
             <a href="#" style="text-decoration: line-through;">Ask about "special inventory"...</a> <span style="color: #ff4444; font-size: 0.8em;">TEMPORARILY UNAVAILABLE - TIME AUDIT IN PROGRESS</span>
         </div>
         
@@ -530,20 +525,11 @@
             Last updated: <span id="shifting-time">??:??</span>
         </div>
     </div>
-    
-    <!-- New tacky footer -->
-    <footer class="tacky-footer">
-        <p>&copy; <span id="current-year"></span> Chronotyrinn's Time Emporium. All timelines reserved.</p>
-        <p>Need help? Call our hotline: 1-800-TIMETRIP</p>
-    </footer>
 
     <script>
         // Set random time for timestamp
         document.getElementById('shifting-time').textContent = 
             `${Math.floor(Math.random() * 24)}:${Math.floor(Math.random() * 60).toString().padStart(2, '0')} ${['CE', 'BCE', 'Æ', '∞', '?!'][Math.floor(Math.random() * 5)]}`;
-        
-        // Set current year in footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
