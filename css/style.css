@@ -1,0 +1,233 @@
+/* Global CSS for Echoes of Apotheosis - I haven't inspected this so what could go wrong? */
+
+/* Base elements */
+body {
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    background-color: #0a0a1a;
+    color: #e0e0ff;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #1a1a2e;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(100, 100, 255, 0.3);
+    padding: 20px;
+    border: 1px solid #3a3a5a;
+}
+
+/* Typography */
+h1 {
+    text-align: center;
+    color: #c0c0ff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(100, 100, 255, 0.5);
+}
+
+h2 {
+    color: #a0a0ff;
+    border-bottom: 1px solid #4a4a6a;
+    padding-bottom: 8px;
+}
+
+h3 {
+    color: #9090ee;
+}
+
+p {
+    line-height: 1.6;
+}
+
+.subtitle {
+    text-align: center;
+    color: #8080c0;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Links */
+a {
+    color: #80a0ff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #c0c0ff;
+    text-decoration: underline;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th {
+    background-color: #2a2a4a;
+    color: #c0c0ff;
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #4a4a6a;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #3a3a5a;
+    vertical-align: top;
+}
+
+tr:hover {
+    background-color: #2a2a3a;
+}
+
+/* Cards and Content Boxes */
+.card {
+    background-color: #1e1e3a;
+    border: 1px solid #3a3a5a;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(80, 80, 150, 0.3);
+}
+
+.card-title {
+    color: #a0a0ff;
+    margin-top: 0;
+    font-size: 1.4em;
+}
+
+/* Header and Navigation */
+header {
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #2a2a4a;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #c0c0ff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+nav a:hover {
+    background-color: #3a3a6a;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px;
+    color: #8080a0;
+    font-size: 0.9em;
+    border-top: 1px solid #3a3a5a;
+}
+
+/* Utility Classes */
+.highlight {
+    color: #ffcc80;
+}
+
+.warning {
+    color: #ff8080;
+}
+
+.note {
+    font-style: italic;
+    color: #a0a0c0;
+    font-size: 0.9em;
+}
+
+.divider {
+    border-top: 1px solid #3a3a5a;
+    margin: 20px 0;
+}
+
+/* Special elements */
+.magic-item {
+    border-left: 3px solid #a080ff;
+    padding-left: 15px;
+    background-color: rgba(160, 128, 255, 0.1);
+}
+
+.location {
+    border-left: 3px solid #80c0ff;
+    padding-left: 15px;
+    background-color: rgba(128, 192, 255, 0.1);
+}
+
+.npc {
+    border-left: 3px solid #80ffa0;
+    padding-left: 15px;
+    background-color: rgba(128, 255, 160, 0.1);
+}
+
+.divine {
+    border-left: 3px solid #ffc080;
+    padding-left: 15px;
+    background-color: rgba(255, 192, 128, 0.1);
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 15px auto;
+}
+
+.img-bordered {
+    border: 1px solid #4a4a6a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        border-radius: 0;
+        padding: 15px;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+    }
+}
