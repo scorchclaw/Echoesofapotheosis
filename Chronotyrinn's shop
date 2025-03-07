@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: "Trebuchet MS", Arial, sans-serif;
+            background-color: #0a0a1a;
+            color: #e0e0ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #1a1a2e;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(100, 100, 255, 0.3);
+            padding: 20px;
+            border: 1px solid #3a3a5a;
+        }
+        h1 {
+            text-align: center;
+            color: #c0c0ff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(100, 100, 255, 0.5);
+        }
+        .subtitle {
+            text-align: center;
+            color: #8080c0;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th {
+            background-color: #2a2a4a;
+            color: #c0c0ff;
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #4a4a6a;
+        }
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #3a3a5a;
+            vertical-align: top;
+        }
+        tr:hover {
+            background-color: #2a2a3a;
+        }
+        .item-name {
+            font-weight: bold;
+            color: #a0a0ff;
+        }
+        .preowned {
+            color: #ff9080;
+            font-style: italic;
+        }
+        .item-type {
+            font-style: italic;
+            color: #8080c0;
+        }
+        .price {
+            font-weight: bold;
+            color: #80ff80;
+        }
+        .disclaimer {
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+            color: #8080a0;
+            font-size: 0.9em;
+        }
+        .notes {
+            font-size: 0.9em;
+            color: #b0b0c0;
+        }
+        .curse {
+            color: #ff8080;
+            font-size: 0.85em;
+            margin-top: 5px;
+            border-left: 3px solid #ff4040;
+            padding-left: 8px;
+        }
+        .header-image {
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to right, #1a1a3a, #3a3a6a, #1a1a3a);
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-image::before {
+            content: "⏱️ ⏰ ⌛ ⌚ ⏱️ ⏰ ⌛";
+            position: absolute;
+            opacity: 0.1;
+            font-size: 30px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-image"></div>
+        <h1>The Chronotyrinn's Temporal Emporium</h1>
+        <div class="subtitle">"Items from every when, for the discerning time-traveler!"</div>
+        
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Alternative Payment</th>
+                <th>Special Properties</th>
+            </tr>
+            <tr>
+                <td class="item-name">Robe of Useful Items <span class="preowned">(PREOWNED)</span></td>
+                <td class="item-type">Wondrous Item (Cursed)</td>
+                <td class="price">150 gp</td>
+                <td>A half-eaten enchanted sandwich</td>
+                <td>
+                    Patches transform into various objects when detached.
+                    <div class="curse">This item is preowned, and carries the sins of its last owner. No guarantees are made.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-name">Blacksmith's Bracers</td>
+                <td class="item-type">Rare, Custom</td>
+                <td class="price">250 gp</td>
+                <td>A secret handshake used by halfhearted criminals</td>
+                <td>Advantage on tool checks with divine items; cast Identify on divine artifacts once per day</td>
+            </tr>
+            <tr>
+                <td class="item-name">Stormglass Harpoon <span class="preowned">(PREOWNED)</span></td>
+                <td class="item-type">Very Rare, Weapon</td>
+                <td class="price">750 gp</td>
+                <td>GOLD GOLD ONLY GOLD</td>
+                <td>
+                    +2d6 lightning damage; can call down thunderstorm once per long rest.
+                    <div class="curse">This item is preowned, and carries the sins of its last owner. No guarantees are made.</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="item-name">Veteran's Censer</td>
+                <td class="item-type">Rare, Custom</td>
+                <td class="price">500 gp</td>
+                <td>A perfect pebble that has never touched water</td>
+                <td>Creates zone preventing undead from being raised; can turn existing undead</td>
+            </tr>
+            <tr>
+                <td class="item-name">Covolt Circlet</td>
+                <td class="item-type">Rare, Custom</td>
+                <td class="price">600 gp</td>
+                <td>GOLD GOLD ONLY GOLD</td>
+                <td>Allows wearer to redirect lightning damage</td>
+            </tr>
+            <tr>
+                <td class="item-name">Corvid Bell</td>
+                <td class="item-type">Uncommon (Single Use)</td>
+                <td class="price">100 gp</td>
+                <td>A single shoe from someone important</td>
+                <td>Summons the Chronotyrinn when rung (1 charge)</td>
+            </tr>
+            <tr>
+                <td class="item-name">Potions of Greater Healing (4)</td>
+                <td class="item-type">Uncommon</td>
+                <td class="price">150 gp (BOGO)</td>
+                <td>A vial of water blessed by a cleric with a cold</td>
+                <td>Restores 4d4+4 hit points per potion</td>
+            </tr>
+            <tr>
+                <td class="item-name">Bracers of Defense</td>
+                <td class="item-type">Rare</td>
+                <td class="price">250 gp</td>
+                <td>GOLD GOLD ONLY GOLD</td>
+                <td>+2 bonus to AC while wearing no armor and using no shield</td>
+            </tr>
+        </table>
+        
+        <div class="disclaimer">
+            "Payment is due the next time you visit. No temporal paradoxes, dimensional anomalies, or existential crises accepted as valid excuses for non-payment."<br>
+            — The Chronotyrinn
+        </div>
+        
+        <div class="notes">
+            <p><strong>Note:</strong> The Chronotyrinn appears to be having some kind of discount sale today - perhaps the items are slipping through time faster than usual, or maybe the eccentric merchant simply feels generous toward this particular group of adventurers...</p>
+        </div>
+    </div>
+</body>
+</html>
