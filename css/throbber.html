@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Lupi Array Throbber</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #0a0a0a;
+    }
+    
+    .throbber-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      animation: rotateThrobber 120s linear infinite;
+    }
+    
+    .center-circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 10;
+    }
+    
+    .orbit-circle {
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .inner-circle {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      border: 1px dashed rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate 30s linear infinite;
+    }
+    
+    .node {
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      background-color: #fff;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    
+    .node-circle {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    
+    .connecting-line {
+      position: absolute;
+      height: 1px;
+      background-color: rgba(255, 255, 255, 0.6);
+      transform-origin: left center;
+      top: 50%;
+      left: 50%;
+      z-index: 1;
+    }
+    
+    @keyframes orbit {
+      0% {
+        transform: rotate(0deg) translateX(90px) rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg) translateX(90px) rotate(-360deg);
+      }
+    }
+    
+    @keyframes pulse {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    
+    @keyframes rotate {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+    @keyframes rotateThrobber {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="throbber-container">
+    <div class="center-circle"></div>
+    <div class="orbit-circle"></div>
+    <div class="inner-circle"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Get container and set up constants
+      const container = document.querySelector('.throbber-container');
+      const centerX = 100;
+      const centerY = 100;
+      const nodeRadius = 105;  // Radius for node positions
+      
+      // Define node positions as angles (in radians) with radius variations
+      const nodePositions = [
+        { angle: 0, radius: nodeRadius - 0 },           // Slightly closer to center
+        { angle: Math.PI * 0.37, radius: nodeRadius + 0 },  // Further out
+        { angle: Math.PI * 0.82, radius: nodeRadius - 0 },   // Slightly closer
+        { angle: Math.PI * 1.28, radius: nodeRadius + 0 },   // Further out
+        { angle: Math.PI * 1.67, radius: nodeRadius - 0 },   // Slightly closer
+        { angle: Math.PI * 0.57, radius: nodeRadius + 0 },  // Further out
+        { angle: Math.PI * 1.52, radius: nodeRadius - 0 }   // Closer to center
+      ];
+      
+      // Create each node, its circle, and connecting line
+      nodePositions.forEach((pos, i) => {
+        // Calculate node position using the varying radius
+        const nodeX = centerX + Math.cos(pos.angle) * pos.radius;
+        const nodeY = centerY + Math.sin(pos.angle) * pos.radius;
+        
+        // Create and position the node
+        const node = document.createElement('div');
+        node.className = 'node';
+        node.style.left = `${nodeX}px`;
+        node.style.top = `${nodeY}px`;
+        node.style.animation = `pulse 5s ${i * 0.4}s infinite ease-in-out`;
+        
+        // Create and position the circle around the node with varying sizes
+        const nodeCircle = document.createElement('div');
+        nodeCircle.className = 'node-circle';
+        nodeCircle.style.left = `${nodeX}px`;
+        nodeCircle.style.top = `${nodeY}px`;
+        
+        // Vary circle sizes between 35px and 50px
+        const circleSize = 35 + Math.floor(i * 5);
+        nodeCircle.style.width = `${circleSize}px`;
+        nodeCircle.style.height = `${circleSize}px`;
+        nodeCircle.style.animation = `pulse 6s ${i * 0.5}s infinite ease-in-out`;
+        
+        // Create the connecting line from center to node
+        const line = document.createElement('div');
+        line.className = 'connecting-line';
+        
+        // Calculate line length and angle
+        const length = Math.sqrt(Math.pow(nodeX - centerX, 2) + Math.pow(nodeY - centerY, 2));
+        const lineAngle = Math.atan2(nodeY - centerY, nodeX - centerX);
+        
+        // Position and animate the line
+        line.style.width = `${length}px`;
+        line.style.transform = `translate(-1px, -50%) rotate(${lineAngle}rad)`;
+        line.style.animation = `pulse 4s ${i * 0.7}s infinite ease-in-out`;
+        
+        // Add elements to the container
+        container.appendChild(line);
+        container.appendChild(node);
+        container.appendChild(nodeCircle);
+      });
+    });
+  </script>
+</body>
+</html>

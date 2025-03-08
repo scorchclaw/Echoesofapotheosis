@@ -3,142 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Echoes of Apotheosis</title>
-    <link rel="stylesheet" href="/Echoesofapotheosis/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Page-specific styles */
-        body {
-            background-image: url('https://img.freepik.com/free-photo/cosmic-background-with-colorful-laser-lights_24837-259.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-            background-position: center;
+    <title>Echoes of Apotheosis | D&D Campaign</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        // Star creation script
+        function createStars() {
+            const backgroundContainer = document.querySelector('.background-container');
+            const starCount = 100;
+            
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Random size between 1 and 3px
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Random position
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                
+                // Random animation delay
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                backgroundContainer.appendChild(star);
+            }
         }
         
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .card-img {
-            height: 180px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 8px 8px 0 0;
-        }
-        
-        .card {
-            padding: 0;
-            overflow: hidden;
-        }
-        
-        .card-content {
-            padding: 15px;
-        }
-        
-        .gods-img {
-            background-image: url('https://img.freepik.com/premium-photo/fantasy-magical-portal-cosmic-space_564714-393.jpg');
-        }
-        
-        .locations-img {
-            background-image: url('https://img.freepik.com/free-photo/fairytale-castle-mountain-top-sunset-ai-generated-image_24640-80401.jpg');
-        }
-        
-        .npcs-img {
-            background-image: url('https://img.freepik.com/free-photo/fantasy-traveler-stands-with-his-back-viewer-mysterious-town-night-digital-art-style-illustration-painting_456031-127.jpg');
-        }
-        
-        .items-img {
-            background-image: url('https://img.freepik.com/free-photo/old-scroll-books-with-candle-light_53876-30561.jpg');
-        }
-        
-        .party-img {
-            background-image: url('https://img.freepik.com/free-photo/fantasy-landscape-with-old-castle_23-2150838001.jpg');
-        }
-        
-        .journal-img {
-            background-image: url('https://img.freepik.com/free-photo/ancient-books-parchment-scrolls-feather-ink-pen-vintage-desk_107791-15498.jpg');
-        }
-        
-        h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3.5em;
-            letter-spacing: 3px;
-        }
-        
-        .subtitle {
-            margin-bottom: 40px;
-        }
-    </style>
+        window.addEventListener('load', createStars);
+    </script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>ECHOES OF APOTHEOSIS</h1>
-            <div class="subtitle">Where gods fall and mortals rise</div>
-        </header>
-        
-        <div class="grid">
-            <div class="card">
-                <div class="card-img gods-img"></div>
-                <div class="card-content">
-                    <h2 class="card-title">The Divine</h2>
-                    <p>The pantheon that shapes our world</p>
-                    <a href="gods/index.html">Explore the Gods →</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img locations-img"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Realms</h2>
-                    <p>The lands scarred by divine conflict</p>
-                    <a href="locations/index.html">Visit Locations →</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img npcs-img"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Characters</h2>
-                    <p>Friends, foes, and those in between</p>
-                    <a href="npcs/index.html">Meet NPCs →</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img items-img"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Artifacts</h2>
-                    <p>Weapons, relics, and magical treasures</p>
-                    <a href="items/index.html">View Collection →</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img party-img"></div>
-                <div class="card-content">
-                    <h2 class="card-title">The Party</h2>
-                    <p>Our heroes standing against the darkness</p>
-                    <a href="party/index.html">Meet the Heroes →</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <div class="card-img journal-img"></div>
-                <div class="card-content">
-                    <h2 class="card-title">Campaign Log</h2>
-                    <p>The journey so far</p>
-                    <a href="journal/index.html">Read the Chronicles →</a>
-                </div>
-            </div>
+    <!-- Background elements -->
+    <div class="background-container"></div>
+    
+    <!-- Ripple effects -->
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    
+    <!-- Ethereal wisps -->
+    <div class="wisp wisp-1"></div>
+    <div class="wisp wisp-2"></div>
+    <div class="wisp wisp-3"></div>
+    <div class="wisp wisp-4"></div>
+    
+    <!-- Subtle chain pattern -->
+    <div class="chain-container"></div>
+    
+    <!-- Header with logo -->
+    <header>
+        <div class="logo-container">
+            <iframe src="css\throbber.html" frameborder="0" scrolling="no" width="250" height="250"></iframe>
         </div>
+        <h1>Echoes of Apotheosis</h1>
+        <p>A placeholder world while i figure out what i want to do</p>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="campaign.html">Campaign</a></li>
+            <li><a href="characters.html">Characters</a></li>
+            <li><a href="world.html">World</a></li>
+            <li><a href="gods.html">Gods</a></li>
+            <li><a href="sessions.html">Session Notes</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Main content -->
+    <div class="container">
+        <!-- Hero section -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="placeholder" alt="Echoes of Apotheosis Campaign Scene" class="full-width">
+            </div>
+            <div class="hero-text">
+                <h2>Welcome to the Journey</h2>
+                <p>Enter a realm where divine beings shape the world's fate, and mortals rise to challenge their authority. Follow the tale of adventurers caught between cosmic forces in a battle that will reshape reality itself.</p>
+                <a href="campaign.html" class="btn">Begin Your Adventure</a>
+            </div>
+        </section>
         
-        <footer>
-            Echoes of Apotheosis Campaign • Where divine and mortal realms collide
-        </footer>
+        <!-- Campaign summary -->
+        <section>
+            <h2>The Story So Far</h2>
+            <div class="card">
+                <p>The gods of Rune have walked among mortals since the dawn of time, their powers tangible and their influence undeniable. But now, an ancient elven wizard named Lysander conspires to bring down these divine beings, beginning with Morvanna, the goddess of death.</p>
+                <p>Our heroes witnessed the first act of the Descendency - a divine paradox as Lysander somehow managed to kill the very goddess of death herself. With Morvanna fallen, the foundations of divine authority crumble, and Lysander begins his quest to harvest the powers of all gods.</p>
+                <p>Now, our party journeys across Rune to forge bonds with the remaining deities, hoping to empower them against Lysander's crusade while uncovering secrets of their own pasts that may be key to saving reality itself.</p>
+            </div>
+        </section>
+        
+        <!-- Featured characters -->
+        <section>
+            <h2>Meet the Heroes</h2>
+            <div class="character-grid">
+                <div class="card character-card">
+                    <img src="placeholder" alt="Sol Margrave">
+                    <h3>Sol Margrave</h3>
+                    <p>A young wizard with mysterious time-manipulation abilities and fragmented memories of timelines that never came to pass.</p>
+                </div>
+                <div class="card character-card">
+                    <img src="placeholder" alt="Verity Oakes">
+                    <h3>Verity Oakes</h3>
+                    <p>A human warlock whose patron Chairon serves as a messenger between the goddesses of life and death.</p>
+                </div>
+                <div class="card character-card">
+                    <img src="placeholder" alt="Voltaire">
+                    <h3>Voltaire</h3>
+                    <p>A young kobold monk from a peace-seeking monastery who journeys to find his strength in a vast and dangerous world.</p>
+                </div>
+            </div>
+            <div class="centered">
+                <a href="characters.html" class="btn">View All Characters</a>
+            </div>
+        </section>
+        
+        <!-- Recent sessions -->
+        <section>
+            <h2>Recent Adventures</h2>
+            <div class="card">
+                <h3>Session 20 - Mansion Assault</h3>
+                <p>The party fought their way through a cult-occupied mansion in Northhold, discovering crucial intelligence about the cult's partnership with Balthion Greenscale and their ongoing plans in the Holy See. References to "the Wyrm of Ash" suggest an alliance with corrupted dragons from the Ashen Plains.</p>
+                <a href="sessions.html#session20">Read More</a>
+            </div>
+            <div class="card">
+                <h3>Session 19 - The Academy's Spirits</h3>
+                <p>In the ruins of Northhold Academy, the party encountered two restless spirits imprisoned by Morvanna centuries ago. They discovered one of Vireth's broken divine weapons and gained insight into Lysander's early skepticism toward the gods.</p>
+                <a href="sessions.html#session19">Read More</a>
+            </div>
+            <div class="centered">
+                <a href="sessions.html" class="btn">View All Sessions</a>
+            </div>
+        </section>
+        
+        <!-- Divine pantheon teaser -->
+        <section>
+            <h2>The Divine Pantheon</h2>
+            <div class="god-grid">
+                <div class="card god-card">
+                    <img src="placeholder" alt="Solarius">
+                    <h3>Solarius</h3>
+                    <p>The Everlasting Sun, bearer of the flames that gifted humanity with law and order.</p>
+                </div>
+                <div class="card god-card">
+                    <img src="placeholder" alt="Phoenix">
+                    <h3>Phoenix</h3>
+                    <p>The goddess of life, renewal, and healing, who gave the spark of life to all.</p>
+                </div>
+                <div class="card god-card">
+                    <img src="placeholder" alt="Morvanna">
+                    <h3>Morvanna</h3>
+                    <p>Our Lady in Chains, the fallen goddess of death who balanced life with finality.</p>
+                </div>
+            </div>
+            <div class="centered">
+                <a href="gods.html" class="btn">Explore the Pantheon</a>
+            </div>
+        </section>
     </div>
+    
+    <!-- Footer -->
+    <footer>
+        <p>Echoes of Apotheosis &copy; 2025 | A Dungeons & Dragons Campaign</p>
+        <p><small>May the gods watch over your journey</small></p>
+    </footer>
+    
+    <style>
+        /* Additional styles for homepage elements */
+        .logo-container {
+            margin: 0 auto;
+            width: 150px;
+            height: 150px;
+        }
+        
+        .hero {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .full-width {
+            width: 100%;
+            height: auto;
+        }
+        
+        .character-grid, .god-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .character-card img, .god-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .character-card h3, .god-card h3 {
+            color: #50C878;
+            margin: 0.5rem 0;
+        }
+        
+        .centered {
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+        
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                align-items: center;
+            }
+            
+            .hero-image {
+                flex: 1;
+            }
+            
+            .hero-text {
+                flex: 1;
+                padding: 0 1rem;
+            }
+        }
+    </style>
+    <script src="/js/stars.js"></script>
 </body>
 </html>
